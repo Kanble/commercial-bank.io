@@ -1,0 +1,250 @@
+/* Общие стили */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Навигационная панель */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  color: #fff;
+  z-index: 1;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 24px;
+}
+
+.navbar .toggle-menu {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navbar .menu {
+  display: flex;
+  list-style: none;
+}
+
+.navbar .menu li {
+  margin-right: 20px;
+}
+
+.navbar .menu li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+  color: #030303;
+}
+.toggle-menu {
+  padding: 10px 20px;
+}
+
+.menu a {
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+.menu a:hover {
+  background-color: #f5f5f5; /* добавьте стиль при наведении, если требуется */
+}
+/* Главная секция */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  
+  background-image: url('service_02.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+
+.hero .hero-content {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: #000000;
+}
+
+.hero p {
+  font-size: 24px;
+  color: #040303;
+}
+
+/* Блоки услуг */
+.services {
+  padding: 50px 0;
+  background-color: #f5f5f5;
+}
+
+.services .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.service {
+  width: 30%;
+  text-align: center;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.service img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.service h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 16px;
+  color: #888;
+}
+
+/* О нас */
+.about {
+  opacity: 0; /* Начальное значение прозрачности */
+  transition: opacity 1s ease-in-out; /* Плавный переход для изменения прозрачности */
+}
+.about.visible {
+  opacity: 1; /* Конечное значение прозрачности */
+}
+
+.about h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+/* Контакты */
+.contact {
+  padding: 50px 0;
+  background-color: #f5f5f5;
+}
+
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  z-index: 9999;
+}
+
+.scroll-to-top i {
+  font-size: 20px;
+}
+
+.scroll-to-top.show {
+  display: block;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .navbar .toggle-menu {
+    display: block;
+  }
+  
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+  }
+  
+  .navbar .menu li {
+    margin-bottom: 10px;
+  }
+  
+  .navbar .menu li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .navbar .menu li a:hover {
+    color: #000000;
+  }
+  
+  .navbar .menu.active {
+    display: flex;
+  }
+  
+  .hero h1 {
+    font-size: 36px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+  }
+  
+  .service {
+    width: 100%;
+  }
+}
